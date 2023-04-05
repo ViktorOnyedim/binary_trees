@@ -4,6 +4,9 @@
 
 /**
  * max - max of 2 numbers
+ *
+ * @num1: first number
+ * @num2: second number
  * Return: Max value
  */
 int max(int num1, int num2)
@@ -34,7 +37,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (tree->left)
 		leftHeight = binary_tree_height(tree->left) + 1;
-		
+
 	if (tree->right)
 		rightHeight = binary_tree_height(tree->right) + 1;
 
