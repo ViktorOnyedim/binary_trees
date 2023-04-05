@@ -21,18 +21,24 @@ int max(int num1, int num2)
  * binary_tree_height - Measures the height of a binary tree.
  *
  * @tree: Pointer to the root node of the tree to measure the height
- * Return: 0 if tree is null
+ * Return: Height of the binary tree, 0 if tree is null
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t leftHeight, rightHeight;
+	size_t leftHeight = 0;
+	size_t rightHeight = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	leftHeight = binary_tree_height(tree->left);
-	rightHeight = binary_tree_height(tree->right);
+	/*leftHeight = binary_tree_height(tree->left);
+	rightHeight = binary_tree_height(tree->right);*/
+	if (tree->left)
+		leftHeight = binary_tree_height(tree->left) + 1;
+		
+	if (tree->right)
+		rightHeight = binary_tree_height(tree->right) + 1;
 
-	return (max(leftHeight, rightHeight) + 1);
+	return (max(leftHeight, rightHeight));
 }
